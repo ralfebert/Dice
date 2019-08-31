@@ -10,17 +10,33 @@ class DiceViewController: UIViewController {
     @IBOutlet var lblNumber: UILabel!
     @IBOutlet var btnDice: UIButton!
 
+    // MARK: - Zustand
+    
+    var nr : Int? {
+        didSet {
+            self.view.setNeedsLayout()
+        }
+    }
+    
     // MARK: - Lebenszyklus
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if let nr = nr {
+            self.lblNumber.text = String(nr)
+        } else {
+            self.lblNumber.text = "-"
+        }
+    }
 
     // MARK: - Actions
-
+    
     @IBAction func rollDice() {
-        let nr = (1 ... 6).randomElement()!
-        self.lblNumber.text = String(nr)
+        self.nr = (1 ... 6).randomElement()
     }
 
     // MARK: - Detect shake
