@@ -11,32 +11,28 @@ class DiceViewController: UIViewController {
     @IBOutlet var btnDice: UIButton!
 
     // MARK: - Zustand
-    
-    var nr : Int? {
+
+    var dice = Dice() {
         didSet {
             self.view.setNeedsLayout()
         }
     }
-    
+
     // MARK: - Lebenszyklus
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        if let nr = nr {
-            self.lblNumber.text = String(nr)
-        } else {
-            self.lblNumber.text = "-"
-        }
+        self.lblNumber.text = String(self.dice.number)
     }
 
     // MARK: - Actions
-    
+
     @IBAction func rollDice() {
-        self.nr = (1 ... 6).randomElement()
+        self.dice.roll()
     }
 
     // MARK: - Detect shake
@@ -48,7 +44,7 @@ class DiceViewController: UIViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         super.motionEnded(motion, with: event)
         if motion == .motionShake {
-            self.rollDice()
+            self.dice.roll()
         }
     }
 
