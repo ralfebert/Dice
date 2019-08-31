@@ -1,0 +1,17 @@
+name: Dice
+options:
+  bundleIdPrefix: com.example
+  generateEmptyDirectories: true
+  deploymentTarget:
+    iOS: "10.0"
+targets:
+  Dice:
+    type: application
+    platform: iOS
+    sources:
+      - path: Dice
+        excludes:
+          - "Assets/*.sketch"
+    settings:
+      base:
+        SWIFT_VERSION: 5.0
