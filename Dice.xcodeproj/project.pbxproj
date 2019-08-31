@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		598B5D99E25F16BBD90D3BA2 /* DiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1720497C0428C2FE25705C /* DiceViewController.swift */; };
 		7980E053CFF30E09AEDE4A62 /* DiceAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D85E691BCABEE2131423B9 /* DiceAppDelegate.swift */; };
 		7DBF617595C36732F00E5986 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BE02A2268BB728A2B9A8647 /* LaunchScreen.storyboard */; };
 		A94757B3047B91603A8FB11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3917CDB33EDD0AA13E2C02DE /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* Begin PBXFileReference section */
 		05D85E691BCABEE2131423B9 /* DiceAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceAppDelegate.swift; sourceTree = "<group>"; };
 		0A37B166A21A7484163C43D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D1720497C0428C2FE25705C /* DiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceViewController.swift; sourceTree = "<group>"; };
 		267F9E98DE9609A2F5E57638 /* Dice.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Dice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DB29EE58982CB72BB1EEBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3917CDB33EDD0AA13E2C02DE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		A69C5CB91098DF5A1187FD80 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0D1720497C0428C2FE25705C /* DiceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7980E053CFF30E09AEDE4A62 /* DiceAppDelegate.swift in Sources */,
+				598B5D99E25F16BBD90D3BA2 /* DiceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

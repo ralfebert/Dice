@@ -1,4 +1,5 @@
-// © 2019 Ralf Ebert — Dice
+// © 2019 Ralf Ebert — iOS Example Project: Dice
+// License: https://opensource.org/licenses/MIT
 
 import UIKit
 
