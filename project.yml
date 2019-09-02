@@ -3,7 +3,7 @@ options:
   bundleIdPrefix: com.example
   generateEmptyDirectories: true
   deploymentTarget:
-    iOS: "10.0"
+    iOS: "13.0"
 targets:
   Dice:
     type: application
