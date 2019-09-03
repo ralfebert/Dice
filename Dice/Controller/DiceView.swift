@@ -9,8 +9,8 @@ struct DiceView: View {
 
     var body: some View {
         VStack(spacing: 50) {
-            Text(String(dice.number))
-                .font(.system(size: 100, weight: .bold))
+            //Text(String(dice.number))
+            //    .font(.system(size: 100, weight: .bold))
             Button("Würfeln") {
                 self.dice.roll()
             }
