@@ -30,9 +30,9 @@ class DiceViewController: UIViewController {
             case .initial:
                 // do nothing
                 break
-            case .number:
+            case let .number(number):
                 self.activityIndicator.stopAnimating()
-                self.lblNumber.text = String(self.dice.number)
+                self.lblNumber.text = String(number)
             case .rolling:
                 self.activityIndicator.startAnimating()
                 self.lblNumber.text = ""
