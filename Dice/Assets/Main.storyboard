@@ -34,15 +34,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="YPb-Im-yEv">
+                                <rect key="frame" x="177.5" y="257" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="S4d-K9-UP8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HHI-jj-Ble"/>
+                            <constraint firstItem="YPb-Im-yEv" firstAttribute="centerY" secondItem="aN9-KB-UQt" secondAttribute="centerY" id="V8Z-qB-XkY"/>
+                            <constraint firstItem="YPb-Im-yEv" firstAttribute="centerX" secondItem="aN9-KB-UQt" secondAttribute="centerX" id="X3D-O6-KZL"/>
                             <constraint firstItem="S4d-K9-UP8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rtS-Ia-WQQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="YPb-Im-yEv" id="uEM-oa-EQv"/>
                         <outlet property="btnDice" destination="8Q8-KF-rDI" id="nD4-Kd-wCa"/>
                         <outlet property="lblNumber" destination="aN9-KB-UQt" id="dwk-ZX-RJg"/>
                     </connections>

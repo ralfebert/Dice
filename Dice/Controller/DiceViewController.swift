@@ -9,24 +9,34 @@ class DiceViewController: UIViewController {
 
     @IBOutlet var lblNumber: UILabel!
     @IBOutlet var btnDice: UIButton!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
     // MARK: - Zustand
 
-    var dice = Dice() {
-        didSet {
-            self.view.setNeedsLayout()
-        }
-    }
+    var dice: Dice!
 
     // MARK: - Lebenszyklus
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dice = Dice()
+        self.dice.delegate = self
+        self.dice.roll()
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        self.lblNumber.text = String(self.dice.number)
+        switch self.dice.state {
+            case .initial:
+                // do nothing
+                break
+            case .number:
+                self.activityIndicator.stopAnimating()
+                self.lblNumber.text = String(self.dice.number)
+            case .rolling:
+                self.activityIndicator.startAnimating()
+                self.lblNumber.text = ""
+        }
     }
 
     // MARK: - Actions
@@ -46,6 +56,18 @@ class DiceViewController: UIViewController {
         if motion == .motionShake {
             self.dice.roll()
         }
+    }
+
+}
+
+extension DiceViewController: DiceDelegate {
+
+    func onStartDiceRoll() {
+        self.view.setNeedsLayout()
+    }
+
+    func onDiceRolled() {
+        self.view.setNeedsLayout()
     }
 
 }
