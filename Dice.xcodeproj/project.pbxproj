@@ -10,8 +10,8 @@
 		7980E053CFF30E09AEDE4A62 /* DiceAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D85E691BCABEE2131423B9 /* DiceAppDelegate.swift */; };
 		7DBF617595C36732F00E5986 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BE02A2268BB728A2B9A8647 /* LaunchScreen.storyboard */; };
 		A96FF554C9EDAD84BAAD0DA7 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2890DDE1DFB0ADDDCA780 /* Dice.swift */; };
-		C3F6D08FB13AC561E5B22971 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4DFA2278A29F06647AC39 /* DiceView.swift */; };
 		C50021E9AFF36B0887034FF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A462C674027813BF0F77D01 /* Assets.xcassets */; };
+		D78FFA6EB8FC0B290FFA3FAF /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5799EEAB88D026423756A45A /* DiceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		267F9E98DE9609A2F5E57638 /* Dice.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Dice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F2890DDE1DFB0ADDDCA780 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		32DB29EE58982CB72BB1EEBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		76F4DFA2278A29F06647AC39 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		5799EEAB88D026423756A45A /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		8A462C674027813BF0F77D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,18 +72,18 @@
 			children = (
 				66B897C2870A9C32B60FBCA9 /* App */,
 				7AD4BB5E3246EB3F5ABAB7E3 /* Assets */,
-				A69C5CB91098DF5A1187FD80 /* Controller */,
 				2426D707A9AC027E76FD3E49 /* Model */,
+				C87F817B383AA33C37E34910 /* Views */,
 			);
 			path = Dice;
 			sourceTree = "<group>";
 		};
-		A69C5CB91098DF5A1187FD80 /* Controller */ = {
+		C87F817B383AA33C37E34910 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				76F4DFA2278A29F06647AC39 /* DiceView.swift */,
+				5799EEAB88D026423756A45A /* DiceView.swift */,
 			);
-			path = Controller;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +148,7 @@
 			files = (
 				A96FF554C9EDAD84BAAD0DA7 /* Dice.swift in Sources */,
 				7980E053CFF30E09AEDE4A62 /* DiceAppDelegate.swift in Sources */,
-				C3F6D08FB13AC561E5B22971 /* DiceView.swift in Sources */,
+				D78FFA6EB8FC0B290FFA3FAF /* DiceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
