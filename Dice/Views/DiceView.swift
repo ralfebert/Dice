@@ -5,7 +5,7 @@ import SwiftUI
 
 struct DiceView: View {
 
-    @ObservedObject var dice = Dice()
+    @EnvironmentObject var dice: Dice
 
     var body: some View {
         VStack(spacing: 50) {
