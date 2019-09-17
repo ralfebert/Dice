@@ -3,12 +3,7 @@
 
 import Foundation
 
-protocol DiceDelegate: AnyObject {
-    func onStartDiceRoll()
-    func onDiceRolled()
-}
-
-class Dice {
+class Dice: ObservableObject {
 
     enum DiceState {
         case initial
@@ -17,13 +12,11 @@ class Dice {
     }
 
     private let range: ClosedRange<Int>
-    var state = DiceState.initial {
+    @Published var state = DiceState.initial {
         didSet {
-            print("State changed: \(state)")
+            print("State changed: \(self.state)")
         }
     }
-
-    weak var delegate: DiceDelegate?
 
     init(max: Int = 6) {
         self.range = 1 ... max
@@ -34,10 +27,8 @@ class Dice {
         switch self.state {
             case .initial, .number:
                 self.state = .rolling
-                self.delegate?.onStartDiceRoll()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.state = .number(number: self.range.randomElement()!)
-                    self.delegate?.onDiceRolled()
                 }
             case .rolling:
                 // do nothing, already rolling

@@ -5,15 +5,33 @@ import SwiftUI
 
 struct DiceView: View {
 
-    @State var dice = Dice()
+    @ObservedObject var dice = Dice()
 
     var body: some View {
         VStack(spacing: 50) {
-            Text(String(describing: dice.state))
-                .font(.system(size: 50, weight: .bold))
+
+            buildDiceView()
+
             Button("Würfeln") {
                 self.dice.roll()
             }
+        }
+    }
+
+    func buildDiceView() -> AnyView {
+        // This method + return type anyView is a workaround for
+        // Closure containing control flow statement cannot be used with function builder 'ViewBuilder'
+        // https://stackoverflow.com/questions/56736466/alternative-to-switch-statement-in-swiftui-viewbuilder-block
+        // https://forums.swift.org/t/function-builders/25167/349
+        switch self.dice.state {
+            case .initial:
+                return AnyView(EmptyView())
+            case let .number(number):
+                return
+                    AnyView(Text(String(number))
+                        .font(.system(size: 100, weight: .bold)))
+            case .rolling:
+                return AnyView(ActivityIndicator())
         }
     }
 
