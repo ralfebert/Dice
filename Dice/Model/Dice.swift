@@ -17,7 +17,12 @@ class Dice {
     }
 
     private let range: ClosedRange<Int>
-    var state = DiceState.initial
+    var state = DiceState.initial {
+        didSet {
+            print("State changed: \(state)")
+        }
+    }
+
     weak var delegate: DiceDelegate?
 
     init(max: Int = 6) {
