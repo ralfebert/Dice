@@ -12,7 +12,7 @@ class DiceViewController: UIViewController {
 
     // MARK: - Zustand
 
-    var dice = Dice() {
+    var dice = RandomDice() {
         didSet {
             self.view.setNeedsLayout()
         }
