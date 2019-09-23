@@ -20,7 +20,10 @@ class DiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dice = Dice()
-        self.dice.delegate = self
+        self.dice.onChange = { [weak self] in
+            guard let self = self else { return }
+            self.view.setNeedsLayout()
+        }
         self.dice.roll()
     }
 
@@ -56,18 +59,6 @@ class DiceViewController: UIViewController {
         if motion == .motionShake {
             self.dice.roll()
         }
-    }
-
-}
-
-extension DiceViewController: DiceDelegate {
-
-    func onStartDiceRoll() {
-        self.view.setNeedsLayout()
-    }
-
-    func onDiceRolled() {
-        self.view.setNeedsLayout()
     }
 
 }
