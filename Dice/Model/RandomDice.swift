@@ -3,16 +3,16 @@
 
 struct RandomDice {
 
-    var number: Int
+    private(set) var number: Int
     private let range: ClosedRange<Int>
 
-    init(max: Int = 6) {
-        self.range = 1 ... max
-        self.number = self.range.randomElement()!
+    init(upperBound: Int = 6) {
+        self.range = 1 ... upperBound
+        self.number = Int.random(in: self.range)
     }
 
     mutating func roll() {
-        self.number = self.range.randomElement()!
+        self.number = Int.random(in: self.range)
     }
 
 }
