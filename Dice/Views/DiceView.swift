@@ -10,11 +10,23 @@ struct DiceView: View {
     var body: some View {
         VStack(spacing: 50) {
 
+            if isLucky {
+                Text("Glückstreffer!")
+            }
+
             buildDiceView()
 
             Button("Würfeln") {
                 self.dice.roll()
             }
+        }
+    }
+
+    var isLucky: Bool {
+        if case let .number(nr) = self.dice.state, nr == 6 {
+            return true
+        } else {
+            return false
         }
     }
 
