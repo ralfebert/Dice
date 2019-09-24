@@ -1,7 +1,7 @@
 // © 2019 Ralf Ebert — iOS Example Project: Dice
 // License: https://opensource.org/licenses/MIT
 
-struct Dice {
+struct RandomDice {
 
     var number: Int
     private let range: ClosedRange<Int>
