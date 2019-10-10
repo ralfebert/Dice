@@ -8,11 +8,11 @@ struct RandomDice {
 
     init(max: Int = 6) {
         self.range = 1 ... max
-        self.number = self.range.randomElement()!
+        self.number = Int.random(in: self.range)
     }
 
     mutating func roll() {
-        self.number = self.range.randomElement()!
+        self.number = Int.random(in: self.range)
     }
 
 }
