@@ -5,21 +5,22 @@ import SwiftUI
 
 struct DiceView: View {
 
-    @State var dice = RandomDice()
+    @State var number = Int.random(in: 1...6)
 
     var body: some View {
         VStack(spacing: 50) {
 
-            Text(String(dice.number))
+            Text(String(self.number))
+                .frame(width: 80, height: 80)
                 .font(.largeTitle)
                 .foregroundColor(Color.red)
                 .padding(20)
                 .border(Color.red, width: 3)
                 .background(Color.yellow)
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                .shadow(radius: 10)
 
             Button("Würfeln") {
-                self.dice.roll()
+                self.number = Int.random(in: 1...6)
             }
         }
     }
