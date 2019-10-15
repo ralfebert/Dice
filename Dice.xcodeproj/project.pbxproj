@@ -41,20 +41,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2426D707A9AC027E76FD3E49 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		3A802CC6A5B93DAFC549B800 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		66B897C2870A9C32B60FBCA9 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +65,7 @@
 			children = (
 				66B897C2870A9C32B60FBCA9 /* App */,
 				7AD4BB5E3246EB3F5ABAB7E3 /* Assets */,
-				3A802CC6A5B93DAFC549B800 /* Common */,
 				A69C5CB91098DF5A1187FD80 /* Controller */,
-				2426D707A9AC027E76FD3E49 /* Model */,
 			);
 			path = Dice;
 			sourceTree = "<group>";
@@ -126,6 +110,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 			);
 			mainGroup = 1A619653B3637BAF1BE9B1FA;
@@ -180,7 +165,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Dice/App/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Dice;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -306,7 +294,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Dice/App/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Dice;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;

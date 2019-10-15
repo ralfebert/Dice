@@ -19,21 +19,8 @@ class DiceViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func rollDice() {
-        let nr = (1 ... 6).randomElement()!
+        let nr = Int.random(in: 1 ... 6)
         self.lblNumber.text = String(nr)
-    }
-
-    // MARK: - Detect shake
-
-    override var canBecomeFirstResponder: Bool {
-        return true
-    }
-
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        super.motionEnded(motion, with: event)
-        if motion == .motionShake {
-            self.rollDice()
-        }
     }
 
 }
