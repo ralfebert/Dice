@@ -15,13 +15,40 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="k9l-Uy-kNm">
+                                <rect key="frame" x="150" y="266.5" width="75" height="134"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice-1" translatesAutoresizingMaskIntoConstraints="NO" id="NRg-XV-vma">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7y-7T-e7m">
+                                        <rect key="frame" x="22.5" y="104" width="30" height="30"/>
+                                        <state key="normal" title="Roll!"/>
+                                        <connections>
+                                            <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hYT-fm-Iq1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="k9l-Uy-kNm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9EG-o3-vZq"/>
+                            <constraint firstItem="k9l-Uy-kNm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vsd-Rq-sIr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="diceImageView" destination="NRg-XV-vma" id="zE3-tr-SlM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="134" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dice-1" width="75" height="75"/>
+    </resources>
 </document>
