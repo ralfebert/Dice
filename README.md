@@ -1,3 +1,3 @@
 # Dice
 
-iOS-Beispielprojekt welches einen einfachen Würfel implementiert.
+iOS sample project which implements a simple dice roll.
