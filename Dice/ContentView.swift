@@ -1,13 +1,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    let diceNumber = Int.random(in: 1 ... 6)
+    @State var diceNumber: Int?
 
     var body: some View {
         VStack(spacing: 15) {
-            Image("dice-\(diceNumber)")
-            Text("You rolled a \(diceNumber)")
-                .bold()
+            if let diceNumber = self.diceNumber {
+                Image(systemName: "die.face.\(diceNumber)")
+                    .imageScale(.large)
+                    .font(.system(size: 50))
+                Text("You rolled a \(diceNumber)")
+                    .bold()
+            }
+            Button("Roll the Dice!") {
+                self.diceNumber = Int.random(in: 1 ... 6)
+            }
         }
     }
 }
