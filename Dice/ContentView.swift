@@ -6,9 +6,11 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 15) {
             if let diceNumber = self.diceNumber {
-                Image(systemName: "die.face.\(diceNumber)")
+                Image(systemName: "die.face.\(diceNumber).fill")
                     .imageScale(.large)
-                    .font(.system(size: 50))
+                    .symbolRenderingMode(.hierarchical)
+                    .foregroundColor(.green)
+                    .font(.system(size: 100))
                 Text("You rolled a \(diceNumber)")
                     .bold()
             }
