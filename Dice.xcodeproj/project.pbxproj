@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BFAEEBF7272DBD1D008806CE /* DiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEEBF6272DBD1D008806CE /* DiceApp.swift */; };
-		BFAEEBF9272DBD1D008806CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEEBF8272DBD1D008806CE /* ContentView.swift */; };
+		BFAEEBF9272DBD1D008806CE /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEEBF8272DBD1D008806CE /* DiceView.swift */; };
 		BFAEEBFB272DBD1E008806CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFAEEBFA272DBD1E008806CE /* Assets.xcassets */; };
 		BFAEEBFE272DBD1E008806CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFAEEBFD272DBD1E008806CE /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		BFAEEBF3272DBD1D008806CE /* Dice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAEEBF6272DBD1D008806CE /* DiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceApp.swift; sourceTree = "<group>"; };
-		BFAEEBF8272DBD1D008806CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BFAEEBF8272DBD1D008806CE /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		BFAEEBFA272DBD1E008806CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFAEEBFD272DBD1E008806CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				BFAEEBF6272DBD1D008806CE /* DiceApp.swift */,
-				BFAEEBF8272DBD1D008806CE /* ContentView.swift */,
+				BFAEEBF8272DBD1D008806CE /* DiceView.swift */,
 				BFAEEBFA272DBD1E008806CE /* Assets.xcassets */,
 				BFAEEBFC272DBD1E008806CE /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFAEEBF9272DBD1D008806CE /* ContentView.swift in Sources */,
+				BFAEEBF9272DBD1D008806CE /* DiceView.swift in Sources */,
 				BFAEEBF7272DBD1D008806CE /* DiceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
