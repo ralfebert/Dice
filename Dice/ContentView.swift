@@ -3,10 +3,15 @@ import SwiftUI
 struct Dice: Identifiable {
     let id = UUID()
     let number = Int.random(in: 1 ... 6)
+    let rotation = Double.random(in: -5 ... 5)
 }
 
 struct DiceRoll {
-    let dice: [Dice] = [Dice(), Dice()]
+    let dice: [Dice]
+
+    init(count: Int) {
+        dice = Array(1 ... count).map { _ in Dice() }
+    }
 
     var totalNumber: Int {
         dice.map { $0.number }.reduce(0, +)
@@ -15,25 +20,48 @@ struct DiceRoll {
 
 struct ContentView: View {
     @State var diceRoll: DiceRoll?
+    @AppStorage("DiceCount") var diceCount: Int = 2
 
     var body: some View {
-        VStack(spacing: 15) {
-            if let diceRoll = self.diceRoll {
-                HStack {
-                    ForEach(diceRoll.dice) { dice in
-                        Image(systemName: "die.face.\(dice.number).fill")
-                            .imageScale(.large)
-                            .symbolRenderingMode(.hierarchical)
-                            .foregroundColor(.green)
-                            .font(.system(size: 100))
+        NavigationView {
+            VStack(spacing: 15) {
+                if let diceRoll = self.diceRoll {
+                    LazyVGrid(columns: [GridItem(), GridItem()]) {
+                        ForEach(diceRoll.dice) { dice in
+                            Image(systemName: "die.face.\(dice.number).fill")
+                                .imageScale(.large)
+                                .symbolRenderingMode(.hierarchical)
+                                .foregroundColor(.green)
+                                .font(.system(size: 100))
+                                .rotationEffect(.degrees(dice.rotation))
+                        }
                     }
+                    Text("\(diceRoll.totalNumber)")
+                        .font(.largeTitle)
                 }
-                Text("\(diceRoll.dice.map { String($0.number) }.formatted()) → \(diceRoll.totalNumber)")
-                    .bold()
+
+                HStack {
+                    Stepper("Dice count", value: $diceCount, in: 1 ... 6)
+                        .labelsHidden()
+
+                    Button(
+                        action: {
+                            self.diceRoll = DiceRoll(count: diceCount)
+                        },
+                        label: {
+                            Image(systemName: "shuffle")
+                        }
+                    )
+                    .buttonStyle(.borderedProminent)
+                }
             }
-            Button("Roll the Dice!") {
-                self.diceRoll = DiceRoll()
+            .onAppear {
+                self.diceRoll = DiceRoll(count: diceCount)
             }
+            .onChange(of: self.diceCount) { _ in
+                self.diceRoll = DiceRoll(count: diceCount)
+            }
+            .navigationTitle("Dice")
         }
     }
 }
