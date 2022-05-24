@@ -36,7 +36,7 @@ struct ContentView: View {
                                 .rotationEffect(.degrees(dice.rotation))
                         }
                     }
-                    Text("\(diceRoll.totalNumber)")
+                    Text("You rolled \(diceRoll.totalNumber).")
                         .font(.largeTitle)
                 }
 
