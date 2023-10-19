@@ -9,6 +9,7 @@ struct DiceView: View {
             Text("You rolled a \(diceNumber)")
                 .bold()
         }
+        .padding()
     }
 }
 
